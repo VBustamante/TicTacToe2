@@ -1,0 +1,132 @@
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+}
+
+header{
+  text-align: center;
+  flex-grow: initial;
+  font-family: 'Zilla Slab Highlight', sans-serif;
+}
+
+#board{
+  pointer-events: none;
+  border: 1px solid black;
+  width: calc(100% - 2px);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.row:first-of-type > div{
+  border-top: none;
+}
+
+.row:last-of-type > div{
+  border-bottom: none;
+}
+
+.row > div:first-of-type{
+  border-left: none;
+}
+
+.row > div:last-of-type{
+  border-right: none;
+}
+
+.game{
+  pointer-events: none;
+  width: 10vw;
+  height: 10vw;
+  border: 4px solid pink;
+  display: flex;
+  flex-direction: column;
+}
+
+.game svg{
+  width: 10vw;
+  height: 10vw;
+  position: absolute;
+}
+
+.game > svg > line{
+  stroke: #555;
+  stroke-width: 4;
+}
+
+.game > .row{
+  height: 33%;
+}
+
+.game > .row:nth-of-type(2){
+  height: 34%;
+}
+
+.game:before{
+  position: absolute;
+  font-family: 'Acme', sans-serif;
+  font-size: 8vw;
+  margin: 0 2.5%;
+  color: rgba(0,0,0,0.1);
+}
+
+.game.x:before{content: 'X';}
+.game.o:before{content: 'O';}
+
+.square{
+  pointer-events: all;
+  width: 33%;
+  border: 2px solid lightgrey;
+}
+
+.game.active .square{
+  border-color: lightskyblue;
+}
+
+.square:before{
+  width: 100%;
+  height: 100%;
+  font-size: 2.4vw;
+  line-height: 3vw;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  font-family: 'Acme', sans-serif;
+}
+
+#board.x .game.active .square:hover:before{
+  color: rgba(0, 0, 0, .5);
+  content: 'X';
+}
+
+#board.o .game.active .square:hover:before{
+  color: rgba(0, 0, 0, .5);
+  content: 'O';
+}
+
+.square.x:before{
+  color: black !important;
+  content: 'X' !important;
+}
+
+.square.o:before{
+  color: black !important;
+  content: 'O' !important;
+}
+
+.game[finished] .square:before{
+  color: #555 !important;
+}
