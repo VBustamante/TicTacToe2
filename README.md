@@ -7,4 +7,4 @@ Initially you can play on any board, but the next play must occur on the board t
 
 It's harder to explain than it is to understand by playing, I promise. 
 
-You can (play it here)[https://vbustamante.github.io/TicTacToe2/]
+You can [play it here](https://vbustamante.github.io/TicTacToe2/)
